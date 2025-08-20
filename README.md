@@ -3,6 +3,8 @@
 
 AgriInnovate is a Django-based project aimed at providing comprehensive agricultural data management and visualization. This project includes features for monitoring crop health, analyzing soil conditions, and integrating weather data for better agricultural decisions.
 
+(https://github.com/Anuragreat/AgriInnovate/blob/master/Screenshot%20(214).png)
+
 ## Features
 
 - **Dashboard:** A user-friendly interface to visualize crop health, soil conditions, weather data, and market trends.
