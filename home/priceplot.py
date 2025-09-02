@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
 import matplotlib
+import mplcyberpunk
 matplotlib.use('Agg')
 
 plt.style.use("cyberpunk")
