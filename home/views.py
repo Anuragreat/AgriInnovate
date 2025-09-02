@@ -1,27 +1,30 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from io import BytesIO
-import requests
-import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
-import pandas as pd
-from .weather import get_weather
-from .priceplot import create_plot
 from django.conf import settings
 from django.utils import timezone
-from datetime import datetime
-import io
-import base64
-import mplcyberpunk
-import matplotlib
-matplotlib.use('Agg')
-from home.models import SoilHealth
-import pandas as pd
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+
+from home.models import SoilHealth
 from .models import SoilHealth
 from .serializers import SoilHealthSerializer
+from .weather import get_weather
+from .priceplot import create_plot
+
+import requests
+from io import BytesIO
+import io
+import base64
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import mplcyberpunk
+from datetime import datetime
+
+matplotlib.use('Agg')
+
 
 class SoilHealthCreateView(APIView):
     def post(self, request):

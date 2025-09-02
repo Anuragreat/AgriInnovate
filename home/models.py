@@ -1,4 +1,3 @@
-# models.py
 from django.db import models
 
 class SoilHealth(models.Model):
