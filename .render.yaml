@@ -1,0 +1,10 @@
+# .render.yaml
+services:
+  - type: web
+    name: AgriInnovate  # <- Replace with your actual Render service name
+    env: python
+    runtime: python
+    buildCommand: |
+      pip install --upgrade pip setuptools wheel
+      pip install -r requirements.txt
+    startCommand: python manage.py runserver 0.0.0.0:8000
