@@ -24,13 +24,17 @@ def fetch_data(day_offset):
     date = today - timedelta(days=day_offset)
     formatted_date = date.strftime("%d-%b-%Y")
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
     }
+    response = requests.get(url, headers=headers)
+
     url = f'https://agmarknet.gov.in/SearchCmmMkt.aspx?Tx_Commodity={crop_code}&Tx_State={state_code}&Tx_District={district_code}&Tx_Market={market_code}&DateFrom={formatted_date}&DateTo={formatted_date}&Fr_Date={formatted_date}&To_Date={formatted_date}&Tx_Trend=0&Tx_CommodityHead={crop}&Tx_StateHead={state}&Tx_DistrictHead={district}&Tx_MarketHead={district}'
     webpage = requests.get(url, headers=headers).text
     soup = BeautifulSoup(webpage, 'html.parser')
     min_price = max_price = None
-    if soup.find_all('td')[0].text.strip() != 'No Data Found':
+    # if soup.find_all('td')[0].text.strip() != 'No Data Found':     rollback
+    tds = soup.find_all('td')
+    if tds and tds[0].text.strip() != 'No Data Found':
         min_price = soup.find_all('td')[6].text.strip()
         max_price = soup.find_all('td')[7].text.strip()
     return formatted_date, min_price, max_price
