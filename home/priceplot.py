@@ -64,7 +64,7 @@ def create_plot():
     max_price = []
 
     with ThreadPoolExecutor(max_workers=7) as executor:
-        futures = [executor.submit(fetch_data, i) for i in range(7)]
+        futures = [executor.submit(fetch_data, i) for i in range(1,8)]
         results = [future.result() for future in as_completed(futures)]
 
     results.sort(key=lambda x: datetime.strptime(x[0], "%d-%b-%Y"))
