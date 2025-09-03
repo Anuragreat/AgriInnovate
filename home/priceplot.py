@@ -73,12 +73,16 @@ def create_plot():
     date, min_price, max_price = zip(*results)
 
     
-    min_price_filled = [min_price[0]]
-    max_price_filled = [max_price[0]]
 
-    for i in range(1, len(min_price)):
-        min_price_filled.append(min_price[i] if min_price[i] is not None else min_price_filled[-1])
-        max_price_filled.append(max_price[i] if max_price[i] is not None else max_price_filled[-1])
+    min_price_filled = []
+    max_price_filled = []
+    
+    for i in range(len(min_price)):
+        min_val = min_price[i] if min_price[i] is not None else (min_price_filled[-1] if min_price_filled else 0)
+        max_val = max_price[i] if max_price[i] is not None else (max_price_filled[-1] if max_price_filled else 0)
+        min_price_filled.append(min_val)
+        max_price_filled.append(max_val)
+
 
     dates_num = range(len(date))  
     plt.figure(figsize=(10, 5))
