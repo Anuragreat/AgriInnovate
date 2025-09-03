@@ -37,9 +37,17 @@ def fetch_data(day_offset):
     min_price = max_price = None
     # if soup.find_all('td')[0].text.strip() != 'No Data Found':     rollback
     tds = soup.find_all('td')
+    # if tds and tds[0].text.strip() != 'No Data Found': rollback2
+    #     min_price = soup.find_all('td')[6].text.strip()  rollback2
+    #     max_price = soup.find_all('td')[7].text.strip()  rollback2
     if tds and tds[0].text.strip() != 'No Data Found':
-        min_price = soup.find_all('td')[6].text.strip()
-        max_price = soup.find_all('td')[7].text.strip()
+        try:
+            min_price = int(tds[6].text.strip())
+            max_price = int(tds[7].text.strip())
+        except (IndexError, ValueError):
+            print(f"Invalid or missing price on {formatted_date}")
+            min_price = max_price = None
+
     return formatted_date, min_price, max_price
 
 def create_plot():
