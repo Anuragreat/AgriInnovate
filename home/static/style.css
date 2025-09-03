@@ -9,12 +9,14 @@ body {
 
 
 header {
-     
-     position: relative;
+    position: relative;
     text-align: center;
     
-    background-image: url("5.jpg")  ;
-    
+    background-color: #4CAF50; /* Fallback green */
+    background-image: url("/static/5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .col-md-12{
     color:#181f1f !important;
@@ -150,7 +152,7 @@ img {
 }
 .sections{
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 0..1rem;
+    padding: 0.1rem;
     margin: 1rem 10rem;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
