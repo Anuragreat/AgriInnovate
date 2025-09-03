@@ -12,18 +12,19 @@ from .models import SoilHealth
 from .serializers import SoilHealthSerializer
 from .weather import get_weather
 from .priceplot import create_plot
+from datetime import datetime
 
 import requests
 from io import BytesIO
 import io
 import base64
 import pandas as pd
-import matplotlib
-import matplotlib.pyplot as plt
-import mplcyberpunk
-from datetime import datetime
+# import matplotlib
+# import matplotlib.pyplot as plt
+# import mplcyberpunk
 
-matplotlib.use('Agg')
+
+# matplotlib.use('Agg')
 
 
 class SoilHealthCreateView(APIView):
@@ -153,6 +154,12 @@ def overall_health(categories):
     else:
         return 'Best'
 def generate_soil_health_plot():
+    import matplotlib
+    import matplotlib.pyplot as plt
+    import mplcyberpunk
+    
+    
+    matplotlib.use('Agg')
 
     recent_data = SoilHealth.objects.order_by('-date')[:7]
     data = {
