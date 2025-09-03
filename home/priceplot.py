@@ -45,8 +45,11 @@ def fetch_data(day_offset):
             min_price = int(tds[6].text.strip())
             max_price = int(tds[7].text.strip())
         except (IndexError, ValueError):
-            print(f"Invalid or missing price on {formatted_date}")
+            # print(f"Invalid or missing price on {formatted_date}")
             min_price = max_price = None
+        else:
+            min_price = max_price = None
+
 
     return formatted_date, min_price, max_price
 
