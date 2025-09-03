@@ -26,6 +26,9 @@ def fetch_data(day_offset):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
     }
+
+    url = f'https://agmarknet.gov.in/SearchCmmMkt.aspx?Tx_Commodity={crop_code}&Tx_State={state_code}&Tx_District={district_code}&Tx_Market={market_code}&DateFrom={formatted_date}&DateTo={formatted_date}&Fr_Date={formatted_date}&To_Date={formatted_date}&Tx_Trend=0&Tx_CommodityHead={crop}&Tx_StateHead={state}&Tx_DistrictHead={district}&Tx_MarketHead={district}'
+
     response = requests.get(url, headers=headers)
 
     url = f'https://agmarknet.gov.in/SearchCmmMkt.aspx?Tx_Commodity={crop_code}&Tx_State={state_code}&Tx_District={district_code}&Tx_Market={market_code}&DateFrom={formatted_date}&DateTo={formatted_date}&Fr_Date={formatted_date}&To_Date={formatted_date}&Tx_Trend=0&Tx_CommodityHead={crop}&Tx_StateHead={state}&Tx_DistrictHead={district}&Tx_MarketHead={district}'
