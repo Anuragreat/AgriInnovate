@@ -54,9 +54,9 @@ def fetch_data(day_offset):
 def create_plot():
     import matplotlib.pyplot as plt
     import matplotlib
-    import mplcyberpunk
+    # import mplcyberpunk   too heavey for render
     matplotlib.use('Agg')
-    plt.style.use("cyberpunk")
+    # plt.style.use("cyberpunk")   too heavy for render
         
     
 
