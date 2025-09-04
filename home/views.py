@@ -191,7 +191,7 @@ def generate_soil_health_plot():
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    mplcyberpunk.add_glow_effects()
+    # mplcyberpunk.add_glow_effects()   too heavy for the render
     
     buffer = BytesIO()
     plt.savefig(buffer, format='png')
