@@ -2,14 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
-# import matplotlib
-# import mplcyberpunk
-# matplotlib.use('Agg')
+import matplotlib
+matplotlib.use('Agg')
 
-# plt.style.use("cyberpunk")
+plt.style.use("cyberpunk")
 
 def fetch_data(day_offset):
     state_code = 'UP'
@@ -52,13 +51,7 @@ def fetch_data(day_offset):
     return formatted_date, min_price, max_price
 
 def create_plot():
-    import matplotlib.pyplot as plt
-    import matplotlib
-    # import mplcyberpunk   too heavy for render
-    matplotlib.use('Agg')
-    # plt.style.use("cyberpunk")   too heavy for render
         
-    
 
     
     dates = [datetime.today() - timedelta(days=i) for i in range(7)]
