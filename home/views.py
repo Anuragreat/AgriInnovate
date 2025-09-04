@@ -156,7 +156,7 @@ def overall_health(categories):
 def generate_soil_health_plot():
     import matplotlib
     import matplotlib.pyplot as plt
-    import mplcyberpunk
+    # import mplcyberpunk
     
     
     matplotlib.use('Agg')
