@@ -216,6 +216,12 @@ def get_weather_data(lat, lon, api_key):
     response.raise_for_status()  
     return response.json()
 def plot_temperatures(weather_data):
+    import matplotlib
+    matplotlib.use('Agg')    
+    import matplotlib.pyplot as plt
+
+
+    
     daily_data = weather_data.get('daily', [])
     
     if not daily_data or len(daily_data) < 7:
