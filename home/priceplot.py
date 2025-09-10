@@ -8,7 +8,7 @@ import base64
 import matplotlib
 matplotlib.use('Agg')
 
-plt.style.use("cyberpunk")
+plt.style.use("dark_background")
 
 def fetch_data(day_offset):
     state_code = 'UP'
