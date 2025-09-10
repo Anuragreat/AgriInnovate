@@ -7,6 +7,11 @@ from io import BytesIO
 import base64
 import matplotlib
 matplotlib.use('Agg')
+#removable
+plt.figure()
+plt.plot([0,1],[0,1])
+plt.close()
+#till here
 
 plt.style.use("dark_background")
 
