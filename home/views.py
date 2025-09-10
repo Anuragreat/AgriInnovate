@@ -23,6 +23,12 @@ import matplotlib
 import matplotlib.pyplot as plt
 
 
+#removable
+plt.figure()
+plt.plot([0,1],[0,1])
+plt.close()
+
+
 
 matplotlib.use('Agg')
 
