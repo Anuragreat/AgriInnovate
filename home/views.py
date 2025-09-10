@@ -21,7 +21,7 @@ import base64
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
-# import mplcyberpunk
+import mplcyberpunk
 
 
 matplotlib.use('Agg')
