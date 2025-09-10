@@ -21,7 +21,7 @@ import base64
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
-import mplcyberpunk
+
 
 
 matplotlib.use('Agg')
@@ -186,7 +186,7 @@ def generate_soil_health_plot():
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    mplcyberpunk.add_glow_effects()
+    # mplcyberpunk.add_glow_effects()
     
     buffer = BytesIO()
     plt.savefig(buffer, format='png')
